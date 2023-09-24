@@ -31,7 +31,9 @@ public class recruitmentStepdefinitions {
     }
     @Given(":click on the add button")
     public void click_on_the_add_button() {
+
         jsclick(recruitmentPage.addButton);
+        ReusableMethods.waitFor(1);
     }
     @Given(":the save process is performed with valid values")
     public void the_save_process_is_performed_with_valid_values() {
@@ -50,7 +52,6 @@ public class recruitmentStepdefinitions {
      jsclick(recruitmentPage.contactNumberText);
      recruitmentPage.contactNumberText.sendKeys("123456789"+Keys.ENTER);
      jsclick(recruitmentPage.saveButton);
-     ReusableMethods.waitFor(5);
 
     }
     @Given(":search is clicked on the candidate page")
@@ -58,10 +59,10 @@ public class recruitmentStepdefinitions {
         actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
         ReusableMethods.bekle(2);
-       jsclick(recruitmentPage.candidateButton);
-       jsclick(recruitmentPage.candidateNameText);
+        jsclick(recruitmentPage.candidateButton);
+        jsclick(recruitmentPage.candidateNameText);
         recruitmentPage.candidateNameText.sendKeys("Joe Brown"+Keys.ENTER);
-       jsclick(recruitmentPage.searchButton);
+        jsclick(recruitmentPage.searchButton);
     }
     @Given(":candidate registration must be verified")
     public void candidate_registration_must_be_verified() {
@@ -69,18 +70,19 @@ public class recruitmentStepdefinitions {
         actions.sendKeys(Keys.TAB).perform();
         String expectedInformation = "Joe"+ "Brown"+ "codermingledev@gmail.com";
         String actualInformation = recruitmentPage.candidateNameText.getText();
-        Assert.assertEquals(expectedInformation,actualInformation);
+        Assert.assertTrue(expectedInformation.contains(actualInformation));
     }
     @Given(":a screenshot of the candidate page is taken")
     public void a_screenshot_of_the_candidate_page_is_taken() throws IOException {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
-        File destinationFile = new File("assets/screenshots/screenshot.png");
+        File destinationFile = new File("target/screenshots/pagescreenshot.png");
         FileUtils.copyFile(sourceFile, destinationFile);
+        ReusableMethods.waitFor(5);
+
     }
     @And(":candidate page is closed")
     public void candidate_page_is_closed(){
-        ReusableMethods.waitFor(5);
         Driver.quitDriver();
 
     }

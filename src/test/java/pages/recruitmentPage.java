@@ -12,9 +12,9 @@ public class recruitmentPage {
 
     @FindBy(xpath = "//span[text()='Recruitment']")
     public WebElement recruitment;
-    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")
+    @FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
     public WebElement addButton;
-    @FindBy(xpath = "//input[@placeholder='First Name']")
+    @FindBy(xpath = "//input[@class='oxd-input oxd-input--active orangehrm-firstname']")
     public WebElement firstNameText;
     @FindBy(xpath = "//input[@placeholder='Last Name']")
     public WebElement lastNameText;
