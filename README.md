@@ -7,7 +7,7 @@
 * Cucumber is used as testing framework for organizing and running tests and performing Assertions
 
 
-## **Build Withe**
+## **Build With**
 * Tool: Selenium
 * Programming Language: Java
 * Framework: Cucumber BDD 
