@@ -1,20 +1,20 @@
 
                                           # ORANGE HRM 
 
-## **❓ What is this Repository about?**
+## **What is this Repository about?**
 * This repo contains example code for OrangeHRM website's tech challenge
 * Maven is used as build tool in this project
 * Cucumber is used as testing framework for organizing and running tests and performing Assertions
 
 
-## ** Build Withe **
+## **Build Withe**
 * Tool: Selenium
 * Programming Language: Java
 * Framework: Cucumber BDD 
 * Version Control: Github
 
 
-## ** Test Covered in this project **
+## **Test Covered in this project**
 * All the tests are written in the login and recruitment class
 * The first test tests the to login with user information
 * The second test verifies that you can add candidates from the candidate page
@@ -27,12 +27,12 @@
 * Chrome, Firefox and Edge browsers are supported in this project
 
 
-## ** Running The Tests **
+## **Running The Tests**
 * To test the @run tag must be added to the scenario in the orangehrm.feature file
 * You need to run the tests in the Runner class
 * To access reporting >>>>>>> Target/Cucumber reports html
 
-### ** Contact Information**
+### **Contact Information**
 * ceydaozcann@gmail.com
 * https://www.linkedin.com/in/ceydakizik/
 
