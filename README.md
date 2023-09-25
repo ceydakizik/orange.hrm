@@ -37,6 +37,6 @@
 
 ### **Contact Information**
 * ceydaozcann@gmail.com
-* https://www.linkedin.com/in/ceydakizik/
+
 
 

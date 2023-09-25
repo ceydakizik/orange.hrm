@@ -45,9 +45,9 @@ public class recruitmentStepdefinitions {
      jsclick(recruitmentPage.select);
      jsclick(recruitmentPage.emailText);
      recruitmentPage.emailText.sendKeys("codermingledev@gmail.com"+Keys.ENTER);
-     jsclick(recruitmentPage.contactNumberText);
-     recruitmentPage.contactNumberText.sendKeys("123456789"+Keys.ENTER);
-     jsclick(recruitmentPage.browseButton);
+     ReusableMethods.waitFor(2);
+     actions.sendKeys(Keys.PAGE_DOWN).perform();
+     ReusableMethods.waitFor(1);
      recruitmentPage.saveButton.click();
 
     }
@@ -55,7 +55,6 @@ public class recruitmentStepdefinitions {
     public void search_is_clicked_on_the_candidate_page(){
         actions=new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_UP).perform();
-        ReusableMethods.bekle(2);
         jsclick(recruitmentPage.candidateButton);
         jsclick(recruitmentPage.candidateNameText);
         recruitmentPage.candidateNameText.sendKeys("Joe Brown"+Keys.ENTER);

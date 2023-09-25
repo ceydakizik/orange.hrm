@@ -26,7 +26,7 @@ public class recruitmentPage {
     public WebElement selectButton;
     @FindBy(xpath = "//div[@class='oxd-select-text-input']")
     public WebElement select;
-    @FindBy(xpath = "//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
+    @FindBy(xpath = "//button[@*='submit']")
     public WebElement saveButton;
     @FindBy(xpath = "//li[@class='oxd-topbar-body-nav-tab --visited']")
     public WebElement candidateButton;
