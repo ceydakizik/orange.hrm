@@ -32,36 +32,34 @@ public class recruitmentStepdefinitions {
     @Given(":click on the add button")
     public void click_on_the_add_button() {
 
-        jsclick(recruitmentPage.addButton);
-        ReusableMethods.waitFor(1);
+       recruitmentPage.addButton.click();
     }
     @Given(":the save process is performed with valid values")
     public void the_save_process_is_performed_with_valid_values() {
 
      jsclick(recruitmentPage.firstNameText);
-     recruitmentPage.firstNameText.sendKeys("Joe"+ Keys.ENTER);
-     ReusableMethods.waitFor(1);
+     recruitmentPage.firstNameText.sendKeys("Joe"+Keys.ENTER);
      jsclick(recruitmentPage.lastNameText);
      recruitmentPage.lastNameText.sendKeys("Brown"+ Keys.ENTER);
-     ReusableMethods.waitFor(1);
      jsclick(recruitmentPage.selectButton);
      jsclick(recruitmentPage.select);
      jsclick(recruitmentPage.emailText);
      recruitmentPage.emailText.sendKeys("codermingledev@gmail.com"+Keys.ENTER);
-     ReusableMethods.waitFor(1);
      jsclick(recruitmentPage.contactNumberText);
      recruitmentPage.contactNumberText.sendKeys("123456789"+Keys.ENTER);
-     jsclick(recruitmentPage.saveButton);
+     jsclick(recruitmentPage.browseButton);
+     recruitmentPage.saveButton.click();
 
     }
     @Given(":search is clicked on the candidate page")
     public void search_is_clicked_on_the_candidate_page(){
         actions=new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_UP).perform();
         ReusableMethods.bekle(2);
         jsclick(recruitmentPage.candidateButton);
         jsclick(recruitmentPage.candidateNameText);
         recruitmentPage.candidateNameText.sendKeys("Joe Brown"+Keys.ENTER);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         jsclick(recruitmentPage.searchButton);
     }
     @Given(":candidate registration must be verified")
@@ -74,7 +72,7 @@ public class recruitmentStepdefinitions {
     }
     @Given(":a screenshot of the candidate page is taken")
     public void a_screenshot_of_the_candidate_page_is_taken() throws IOException {
-        TakesScreenshot screenshot = (TakesScreenshot) driver;
+       TakesScreenshot screenshot = (TakesScreenshot) driver;
         File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
         File destinationFile = new File("target/screenshots/pagescreenshot.png");
         FileUtils.copyFile(sourceFile, destinationFile);

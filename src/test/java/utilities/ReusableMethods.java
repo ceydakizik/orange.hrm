@@ -27,22 +27,11 @@ public class ReusableMethods {
         TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
+        String target = System.getProperty("user.dir") + "target/screenshots/pagescreenshot.png" + name + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
         return target;
-    }
-    public static String getScreenshotWebElement(String name,WebElement element) throws IOException {
-        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        // TakesScreenshot is an interface of selenium that takes the screenshot
-        File source = element.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
-        String wElementSS = System.getProperty("user.dir") + "/target/WElementScreenshots/" + name + date + ".png";
-        File finalDestination = new File(wElementSS);
-        // save the screenshot to the path given
-        FileUtils.copyFile(source, finalDestination);
-        return  wElementSS;
     }
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -176,15 +165,11 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
-    static Faker faker;
     static Actions actions;
 
     static Select select;
     static WebElement ddm;
-    //====== Faker ======//
-    public static Faker getFaker() { // getFaker method
-        return faker = new Faker();
-    }
+
     //====== Actions ======//
     public static Actions getActions() { //getActions method
         return actions = new Actions(Driver.getDriver());

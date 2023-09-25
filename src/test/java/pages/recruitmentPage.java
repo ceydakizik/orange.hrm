@@ -14,7 +14,7 @@ public class recruitmentPage {
     public WebElement recruitment;
     @FindBy(xpath = "//i[@class='oxd-icon bi-plus oxd-button-icon']")
     public WebElement addButton;
-    @FindBy(xpath = "//input[@class='oxd-input oxd-input--active orangehrm-firstname']")
+    @FindBy(xpath = "//input[@placeholder='First Name']")
     public WebElement firstNameText;
     @FindBy(xpath = "//input[@placeholder='Last Name']")
     public WebElement lastNameText;
@@ -34,5 +34,7 @@ public class recruitmentPage {
     public WebElement candidateNameText;
     @FindBy(xpath = " //button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
     public WebElement searchButton;
+    @FindBy(xpath = "//div[@class='oxd-file-button']")
+    public WebElement browseButton;
 
 }
