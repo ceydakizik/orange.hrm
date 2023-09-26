@@ -20,19 +20,19 @@ public class recruitmentPage {
     public WebElement lastNameText;
     @FindBy(xpath = "//input[@placeholder='Type here'][1]")
     public WebElement emailText;
-    @FindBy(xpath = "//input[@placeholder='Type here'][2]")
-    public WebElement contactNumberText;
-    @FindBy(xpath = "//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow']")
+    @FindBy(xpath = "//div[@class='oxd-select-text--after']")
     public WebElement selectButton;
     @FindBy(xpath = "//div[@class='oxd-select-text-input']")
     public WebElement select;
+    @FindBy(xpath = "//*[text()='Jr software developer']")
+    public WebElement jobChoise;
     @FindBy(xpath = "//button[@*='submit']")
     public WebElement saveButton;
     @FindBy(xpath = "//li[@class='oxd-topbar-body-nav-tab --visited']")
     public WebElement candidateButton;
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     public WebElement candidateNameText;
-    @FindBy(xpath = " //button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement searchButton;
     @FindBy(xpath = "//div[@class='oxd-file-button']")
     public WebElement browseButton;
